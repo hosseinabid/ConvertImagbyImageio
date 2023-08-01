@@ -4,10 +4,10 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import javax.imageio.ImageIO;
 
-public class Main {
+public class ConvertJpgToWebp {
     public static void main(String[] args) throws Exception {
         String inputDirectory = "E:\\pic\\jpg\\";
-        String outputDirectory = "E:\\pic\\webp\\";
+        String outputDirectory = "E:\\pic\\webp13\\";
 
         // Create the output directory if it doesn't exist
         File outputDirFile = new File(outputDirectory);
@@ -29,9 +29,7 @@ public class Main {
     }
 
     private static void convertJpegToWebp(String inputFile, String outputFile) throws Exception {
-        // Read JPG image
         BufferedImage image = ImageIO.read(new File(inputFile));
-        // Encode it as webp using default settings and save it as webp file
         ImageIO.write(image, "webp", new File(outputFile));
     }
 }
